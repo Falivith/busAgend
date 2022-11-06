@@ -5,20 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="paradastyle" href="styleparada.css">
     <title>Parada</title>
 </head>
 <body>
-  <form action="agend.html" method="post">
+  <div class="form">
+  <div class="imgcontainer">
+    <img src="images/busAgend.png" alt="BusLogo" class="ufpel_logo">
+  </div>
 
-    <div class="imgcontainer">
-      <img src="images/busAgend.png" alt="BusLogo" class="ufpel_logo">
+  <label class="lbl" for="indicator">Indicador de lotação</label>
+    <div class="barcontainer" name="indicator">
+      <div class="innercontainer_2"></div>
     </div>
 
-    <label class="lbl" for="indicator">Indicador de lotação</label>
-      <div class="barcontainer" name="indicator">
-        <div class="innercontainer_2"></div>
-      </div>
-  </form>
+    <div style="height:0;width:20%;padding-bottom:20%;background-color:blue;margin: 20px;">
+      <div id="totsquare"></div>
+    </div>
+      <label class="lbl" for="indicator">Vagas Totais</label>
+    <div style="height:0;width:20%;padding-bottom:20%;background-color:green;margin: 20px;">
+      <div id="totsquare"></div>
+    </div>
+      <label class="lbl" for="indicator">Vagas Ocupadas</label>
+  </div>
 </body>
 </html>

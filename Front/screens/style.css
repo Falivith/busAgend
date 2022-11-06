@@ -1,26 +1,36 @@
-/* Bordered form */
-
-html{
-  background-color: white;
-  background-image: url(images/angloletreiro.jpg);
-  background-blend-mode: multiply;
-  background-size: cover;
-}
-
 html *
 {
-   font-size: 1em !important;
-   color: #000 !important;
+   font-size: 1em;
+   color: #000;
    font-family: 'Roboto', sans-serif;
 }
 
-form {
-  background-color: #f1f1f1;
-    border: 3px solid #f1f1f1;
-    margin-left: 500px;
-    margin-right: 500px;
-    margin-top: 50px;
-  }
+body::before{
+  content: "";
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  height: 100%;  
+  opacity: .6; 
+  z-index: -1;
+  background-image: url("images/angloletreiro.jpg");
+  background-size: cover;
+}
+
+.form{
+  background-color: white;
+  position: absolute;
+}
+
+body
+{
+  background-color: white;
+  opacity: 100%;
+  margin-left: 500px;
+  margin-right: 500px;
+  margin-top: 50px;
+}
   
   /* Full-width inputs */
   input[type=text], input[type=password] {
@@ -54,7 +64,6 @@ form {
   
   img.ufpel_logo{
     width: 35%;
-    border-radius: 50%;
   }
   
   .container {
@@ -72,16 +81,17 @@ form {
   }
 
   .barcontainer{
-    height: 40px;
-    margin: 15px;
+    height: 50px;
+    margin: 20px;
     background-color: blue;
     border-radius: 5px;
     position: relative;
   }
   
  .innercontainer_2{
-    position: absolute;
+    position: relative;
     height: 100%;
-    width: 50%;
+    width: 30%;
     background-color: #04AA6D;
+    border-radius: 5px;
   }

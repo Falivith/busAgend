@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <label class="lbl" for="gerador"><b>Gerador de QRCode</b></label><br />
+        <input type="text" placeholder="Matricula" name="Matricula">
+        <textarea maxlength="256" , rows="1" id="conteudoQRCode"></textarea>
+        <br />
+        <button type="button" , onclick="GeraQRCode()">
+            Gerar QR Code
+        </button>
+
+        <br /><br />
+
+        <img id="imageQRCode" src="">
+    </div>
+</body>
+<script>
+    function GeraQRCode() {
+        var conteudo = document.getElementById('conteudoQRCode').value;
+        var GoogleCharts = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl='; //chl eh o que vai buscar
+        var imagemQRCode = GoogleCharts + conteudo; //chl = conteudo
+        document.getElementById('imageQRCode').src = imagemQRCode;
+
+    }
+</script>
+
+</html>
