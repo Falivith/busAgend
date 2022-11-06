@@ -2,40 +2,28 @@
 <html lang="pt-br">
 
 <head>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <title>Leaflet</title>
+    <style>
+        #mapid {
+            height: 50em;
+            width: 40%;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <label class="lbl" for="gerador"><b>Gerador de QRCode</b></label><br />
-        <input type="text" placeholder="Matricula" name="Matricula">
-        <textarea maxlength="256" , rows="1" id="conteudoQRCode"></textarea>
-        <br />
-        <button type="button" , onclick="GeraQRCode()">
-            Gerar QR Code
-        </button>
-
-        <br /><br />
-
-        <img id="imageQRCode" src="">
-    </div>
+    <div id="mapid"></div>
+    <script src="./script.js"></script>
 </body>
-<script>
-    function GeraQRCode() {
-        var conteudo = document.getElementById('conteudoQRCode').value;
-        var GoogleCharts = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl='; //chl eh o que vai buscar
-        var imagemQRCode = GoogleCharts + conteudo; //chl = conteudo
-        document.getElementById('imageQRCode').src = imagemQRCode;
-
-    }
-</script>
 
 </html>

@@ -5,27 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <style>
+      #mapid {
+          height: 50em;
+          width: 100%;
+      }
+  </style>
     <title>Parada</title>
 </head>
 <body>
   <div class="form">
-  <div class="imgcontainer">
-    <img src="images/busAgend.png" alt="BusLogo" class="ufpel_logo">
-  </div>
 
   <label class="lbl" for="indicator">Indicador de lotação</label>
     <div class="barcontainer" name="indicator">
       <div class="innercontainer_2"></div>
     </div>
 
-    <div style="height:0;width:20%;padding-bottom:20%;background-color:blue;margin: 20px;">
-      <div id="totsquare"></div>
+    <div><div class='box red'></div>= Lugares Disponíveis</div>
+    <br>
+    <div><div class='box green'></div>= Lugares Ocupados</div>
+
+    <div>   
+      <div class="qrcontainer">
+        <img id="imageQRCode" src="">
+      </div>
     </div>
-      <label class="lbl" for="indicator">Vagas Totais</label>
-    <div style="height:0;width:20%;padding-bottom:20%;background-color:green;margin: 20px;">
-      <div id="totsquare"></div>
-    </div>
-      <label class="lbl" for="indicator">Vagas Ocupadas</label>
+
+      <div id="mapid"></div>
+      <script src="./script.js"></script>
+
+    <script type="module">
+
+      window.onload = function () {
+        let gerador = window.localStorage.getItem('matricula');
+        console.log(gerador);        
+        var GoogleCharts = 'https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=google.com'; //chl eh o que vai buscar
+        var imagemQRCode = GoogleCharts; //chl = conteudo
+        document.getElementById('imageQRCode').src = imagemQRCode;
+      }
+    </script>
   </div>
 </body>
 </html>
+
